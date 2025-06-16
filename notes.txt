@@ -1,0 +1,3 @@
+My first line in file.
+Second line of notes.
+Appended third line.
