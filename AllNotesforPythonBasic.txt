@@ -1,0 +1,967 @@
+🐍 ရက် ၁ – Python မိတ်ဆက် + Installation
+----------------------------------------
+✅ Python ဆိုတာဘာလဲ?
+Python ဟာ high-level, interpreted, object-oriented programming language ဖြစ်ပြီး
+DevOps, Web Development, Data Science, Automation တို့မှာ အလွန်အသုံးများတယ်။
+
+✅ Python ရဲ့ အသုံးဝင်မှု
+Shell script ထက် ပိုပြင်းပြတဲ့ automation
+Ansible, Terraform တို့မှာ module/plugin များရေးရန်
+AWS Lambda scripting, API integration, etc.
+
+🖥️ Installation (Ubuntu 24.04 LTS မှာ)
+Ubuntu မှာ Python 3 ပါပြီးသား ဖြစ်တတ်ပါတယ်။ စစ်ကြည့်ရန်:
+
+bash
+python3 --version
+မပါဘူးဆိုရင် install:
+
+bash
+sudo apt update
+sudo apt install python3 python3-pip -y
+
+Python script file တစ်ခုရေးဖို့:
+bash
+nano hello.py
+print("မင်္ဂလာပါ Python!")
+
+Run:
+bash
+python3 hello.py
+📚 ရေးမယ့် Python File များကို Folder ထဲမှာသိမ်းထားမယ်
+bash
+mkdir ~/devops-python
+cd ~/devops-python
+
+📘 ရက် ၁ အတွက် Assignment (လေ့ကျင့်ရေး)
+-------------------------------------
+hello.py → မင်္ဂလာစာတစ်ခု print ထုတ်ပါ။
+aboutme.py → သင့်နာမည်၊ အသက်၊ မျက်နှာသစ်စကား များကို print() သုံးပြီးရေးပါ။
+
+ဥပမာ:
+print("ကျွန်တော်အမည်က Aung Aung")
+print("အသက် ၂၂ နှစ်")
+print("DevOps Engineer တစ်ယောက်ဖြစ်ချင်တယ်")
+
+===================================================================================
+🐍 ရက် ၂ – Variables, Data Types, Input (Python အခြေခံ)
+------------------------------------------------------
+ဒီနေ့မှာ သင်ယူမယ့်အကြောင်းအရာတွေကတော့ :
+Variables (အမြဲတန်ဖိုးထည့်သိမ်းတဲ့နေရာ)
+Data Types (String, Integer, Float, Boolean)
+input() (အသုံးပြုသူထံက data ခံယူခြင်း)
+
+🧠 Variables ဆိုတာဘာလဲ?
+----------------------
+Python မှာ variable တစ်ခုက တန်ဖိုးတစ်ခုကို သိမ်းထားနိုင်တဲ့ နာမည်တစ်ခုပါ။
+
+python
+name = "Mg Mg"
+age = 22
+height = 5.8
+is_student = True
+
+🧪 Data Types များ
+----------------
+Data Type	Example	Description
+str	"Hello"	စာသားများ (Text/String)
+int	10	အပြည့်အဆ (Integer)
+float	3.14	ဒဿမပါဝင်သောနံပါတ် (Floating)
+bool	True, False	ဟုတ်/မဟုတ် (Boolean)
+
+🎯 Input() – အသုံးပြုသူထံမှ Data ခံယူခြင်း
+------------------------------------
+name = input("နာမည်ထည့်ပါ: ")
+print("မင်္ဂလာပါ", name)
+✔️ Default input() သည် string (စာသား) အဖြစ် data ထုတ်ပေးသည်။
+
+age = input("အသက်ထည့်ပါ: ")
+print("သင်၏အသက်:", age)
+👉 ဒါကို int() သုံးပြီး integer ပြောင်းချင်တယ်ဆိုရင်:
+
+age = int(input("အသက်ထည့်ပါ: "))
+print("လာမည့်နှစ်မှာ သင်အသက်", age + 1, "ဖြစ်မှာပါ။")
+
+📘 ရက် ၂ လေ့ကျင့်ရေး
+------------------
+File 1: my_info.py
+name = input("နာမည်ရေးပါ: ")
+age = int(input("အသက်ထည့်ပါ: "))
+height = float(input("အရပ်ကို (မီတာ) ဖြင့်ထည့်ပါ: "))
+is_devops = True
+print("\n--- သင့်အချက်အလက် ---")
+print("နာမည်:", name)
+print("အသက်:", age)
+print("အရပ်:", height)
+print("DevOps သင်တန်းတက်နေသည်:", is_devops)
+
+==============================================================================
+
+ရက် ၃ – Python Operators & Type Conversion (အထွေထွေ စက်ဝိုင်း)
+------------------------------------------------------------
+ဒီနေ့မှာ သင်ကြားမယ့်အကြောင်းအရာတွေကတော့👇
+🔢 Operators (အော်ပရေးတာ)
+
+✅ Arithmetic Operators (ဂဏန်းတွက်)
+----------------------------------
+Operator	Usage	        Example	          Result
++	        Add	             3 + 2	            5
+-	        Subtract	     3 - 2	            1
+*	        Multiply	     3 * 2	            6
+/	        Divide	         3 / 2	            1.5
+//	        Floor Div	     3 // 2	            1
+%	        Modulus	         3 % 2	            1
+**	        Power	         2 ** 3	            8
+
+📌 ဥပမာ:
+a = 10
+b = 3
+print("Plus:", a + b)
+print("Minus:", a - b)
+print("Multiply:", a * b)
+print("Divide:", a / b)
+print("Floor Divide:", a // b)
+print("Remainder:", a % b)
+print("Power:", a ** b)
+
+🔍 ၂။ Comparison Operators (နှိုင်းယှဉ်)
+-----------------------------------
+Operator	 Meaning	       Example	     Result
+==	         Equal to	       a == b	     False
+!=	         Not equal to	   a != b	     True
+>	         Greater than	   a > b	     True
+<	         Less than	       a < b	     False
+>=	         Greater or equal  a >= b	     True
+<=	         Less or equal	   a <= b	     False
+
+✅ ၃။ Logical Operators
+----------------------
+a = 10
+b = 5
+print(a > 3 and b < 10)  # True and True = True
+print(a > 3 or b > 20)   # True or False = True
+print(not a < 3)         # not False = True
+
+🔁 ၄။ Type Conversion (Data type ပြောင်း)
+--------------------------------------
+# String to int
+num = int("5")  # result = 5
+# Int to string
+s = str(100)  # result = "100"
+# String to float
+f = float("3.14")  # result = 3.14
+
+📘 လေ့ကျင့်ရေး
+------------
+File ၁: calculator.py
+num1 = float(input("ပထမဂဏန်းထည့်ပါ: "))
+num2 = float(input("ဒုတိယဂဏန်းထည့်ပါ: "))
+print("စုစုပေါင်း:", num1 + num2)
+print("နုတ်ခြင်း:", num1 - num2)
+print("မြှောက်ခြင်း:", num1 * num2)
+print("စားခြင်း:", num1 / num2)
+print("ကျန်ရှိခြင်း:", num1 % num2)
+
+File ၂: compare.py
+a = int(input("နံပါတ် A: "))
+b = int(input("နံပါတ် B: "))
+print("တူသည်:", a == b)
+print("မတူပါ:", a != b)
+print("A > B ?", a > b)
+==============================================================================
+
+🐍 ရက် ၄ – Python Conditional Statements (if, elif, else)
+--------------------------------------------------------
+ဒီနေ့မှာ သင်ကြားမယ့်အကြောင်းအရာတွေကတော့👇
+if, elif, else ဆိုတာဘာလဲ/Syntax (ရေးပုံ)
+Comparison နဲ့ Logical operators တွေကို အသုံးချသုံးခြင်း
+
+✅ if, elif, else ဆိုတာဘာလဲ?
+----------------------------
+ဒါတွေကတော့ အခြေအနေတစ်ခုစီအပေါ် မူတည်ပြီး code များကို အလုပ်လုပ်စေဖို့ သုံးတဲ့ structure တွေပါ။
+
+🔹 Syntax:
+if condition:
+    # condition true ဖြစ်ရင် ဒီကို run
+elif another_condition:
+    # condition ၂ ဖြစ်ရင် run
+else:
+    # အပေါ် conditions မတူရင် default run
+
+🔸 ဥပမာ:
+
+age = int(input("အသက်ထည့်ပါ: "))
+if age < 13:
+    print("သင်က ကလေးပါ။")
+elif age < 20:
+    print("သင်က ယခုလူငယ်ပါ။")
+else:
+    print("သင်က အရွယ်ရောက်ပြီးသူဖြစ်ပါတယ်။")
+
+🔸 Logical Operators ဖြင့် if
+age = 25
+citizen = True
+if age >= 18 and citizen:
+    print("မဲပေးခွင့်ရှိပါသည်။")
+else:
+    print("မဲပေးခွင့်မရှိပါ။")
+
+🧪 လေ့ကျင့်ရေး
+------------
+📁 File 1: grade_checker.py
+score = int(input("သင်၏အမှတ်: "))
+if score >= 80:
+    print("A")
+elif score >= 70:
+    print("B")
+elif score >= 60:
+    print("C")
+elif score >= 50:
+    print("D")
+else:
+    print("F")
+
+📁 File 2: login.py
+username = input("Username ထည့်ပါ: ")
+password = input("Password ထည့်ပါ: ")
+if username == "admin" and password == "1234":
+    print("Login สำเร็จ!")
+else:
+    print("Login မအောင်မြင်ပါ။")
+
+💡 Tips
+Python မှာ indentation (space ၄ ခု) တိတိကျကျလုပ်ရပါမယ်။
+if နောက်မှာ : မမေ့ပါနဲ့။
+
+===========================================================================
+
+🐍 ရက် ၅ – Python Loops (for loop, while loop)
+---------------------------------------------
+ဒီနေ့မှာ သင်ယူမယ့်အကြောင်းအရာတွေက👇
+
+for loop ဘယ်အချိန်မှာသုံးလဲ
+while loop ဘယ်လိုအလုပ်လုပ်လဲ
+break, continue, range()
+
+🔁 ၁။ for Loop – ထပ်ခါထပ်ခါလုပ်ရန်
+--------------------------------
+# List ထဲက item တစ်ခုစီကို လုပ်
+fruits = ["apple", "banana", "mango"]
+for fruit in fruits:
+    print(fruit)
+
+🔹 range() function သုံးခြင်း
+for i in range(5):  # 0 to 4
+    print(i)
+for i in range(1, 6):  # 1 to 5
+    print(i)
+
+🔁 ၂။ while Loop – condition တစ်ခုအထိ run
+----------------------------------------
+i = 1
+while i <= 5:
+    print(i)
+    i += 1
+
+✋ ၃။ break နဲ့ continue
+---------------------
+break ➜ loop ကို ဖျက်တတ်တယ်
+continue ➜ အဲ့ iteration ကို skip
+
+for i in range(1, 10):
+    if i == 5:
+        break
+    print(i)
+for j in range(1, 6):
+    if j == 3:
+        continue
+    print(j)
+
+🧪 လေ့ကျင့်ရေး
+------------
+📁 File: even_numbers.py
+# 1 ကနေ 20 ထိ ဂဏန်းတွေထဲက စုံဂဏန်းများ
+for i in range(1, 21):
+    if i % 2 == 0:
+        print(i)
+
+📁 File: password_retry.py
+# Password မှန်တဲ့အထိ ထပ်ထည့်ခိုင်းမယ်
+password = ""
+attempt = 0
+while password != "abc123":
+    password = input("Password ထည့်ပါ: ")
+    attempt += 1
+print(f"မှန်ပါပြီ။ (တစ်ကြိမ် {attempt} ကြိမ် သွင်းခဲ့တယ်)")
+
+📁 File: multiplication_table.py
+n = int(input("ဘယ်ဂဏန်းနဲ့ ပြုလုပ်မလဲ: "))
+for i in range(1, 13):
+    print(f"{n} x {i} = {n*i}")
+
+==============================================================================
+
+🐍 ရက် ၆ – Python Data Types: List, Tuple, Set, Dictionary
+----------------------------------------------------------
+ဒီနေ့မှာ သင်ကြားမယ့်အကြောင်းအရာတွေကတော့👇
+
+List       – မျိုးစုံသော data များကို စဉ်လိုက်ထားခြင်း
+Tuple      – မပြောင်းလဲနိုင်သော data အစု
+Set        – တူညီမှုမရှိသော data အစု
+Dictionary – key-value အမျိုးအစား data
+
+🔸 ၁။ List (စာရင်း)
+-----------------
+fruits = ["apple", "banana", "mango"]
+print(fruits[0])      # apple
+print(len(fruits))    # 3
+fruits.append("orange")     # အသစ်ထည့်
+fruits.remove("banana")     # ဖျက်
+print(fruits)
+
+🔹 Useful methods:
+
+fruits.sort()
+fruits.reverse()
+fruits.clear()
+
+🔸 ၂။ Tuple (မပြောင်းနိုင်သော list)
+------------------------------
+colors = ("red", "green", "blue")
+print(colors[1])      # green
+
+# colors[0] = "yellow" ❌ error ဖြစ်မယ် – not changeable
+
+🔸 ၃။ Set (တူတာ repeated မဖြစ်)
+
+numbers = {1, 2, 3, 3, 4}
+print(numbers)   # Output: {1, 2, 3, 4}
+
+numbers.add(5)
+numbers.remove(2)
+➡️ set တွေမှာ order မရှိပါ – index နဲ့ access လုပ်လို့မရပါ။
+
+🔸 ၄။ Dictionary (Key-Value Pair)
+--------------------------------
+person = {
+    "name": "Aung Aung",
+    "age": 25,
+    "city": "Yangon"
+}
+
+print(person["name"])         # Aung Aung
+person["job"] = "Developer"   # အသစ်ထည့်
+del person["city"]            # ဖျက်
+
+🔹 Useful methods:
+print(person.keys())
+print(person.values())
+
+🧪 လေ့ကျင့်ရေး
+------------
+📁 File: student_list.py
+students = ["Mg Mg", "Su Su", "Aye Aye"]
+for student in students:
+    print("Student:", student)
+
+📁 File: user_profile.py
+user = {
+    "username": "admin",
+    "password": "1234"
+}
+if user["password"] == "1234":
+    print("Login success!")
+else:
+    print("Wrong password.")
+
+📁 File: unique_fruits.py
+fruits = ["apple", "banana", "apple", "orange"]
+unique_fruits = set(fruits)
+print(unique_fruits)
+
+==========================================================================
+
+🐍 ရက် ၇ – Python Function များ (def, arguments, return)
+------------------------------------------------------
+ဒီနေ့မှာ သင်ကြားမယ့်အချက်တွေက👇
+
+def ဖြင့် function တည်ဆောက်ခြင်း
+parameters (arguments)
+return value
+default parameters
+practical examples
+
+🔹 ၁။ Function ဆိုတာဘာလဲ?
+-------------------------
+Function ဆိုတာ – တစ်ကြိမ်ရေးလိုက်ပြီး တစ်နေရာထက်မကခေါ်သုံးလို့ရတဲ့ code block ပါ။
+def say_hello():
+    print("Hello from function!")
+    
+say_hello()  # call
+
+🔹 ၂။ Parameters/Arguments
+--------------------------
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Aung Aung")
+greet("Su Su")
+
+🔹 ၃။ Return Statement
+---------------------
+def add(a, b):
+    return a + b
+
+result = add(3, 4)
+print("Result:", result)
+➡️ return သည် value တစ်ခုကို ပြန်ပေးပါတယ်။
+
+🔹 ၄။ Default Parameters
+------------------------
+def greet(name="Friend"):
+    print(f"Hello, {name}!")
+
+greet()           # Hello, Friend
+greet("Kyaw")     # Hello, Kyaw
+
+🔹 ၅။ Function with List
+-----------------------
+def total(numbers):
+    return sum(numbers)
+
+print(total([1, 2, 3, 4]))
+
+🧪 လေ့ကျင့်ရေး
+-----------
+📁 File: calculator.py
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+print("5 + 2 =", add(5, 2))
+print("5 - 2 =", subtract(5, 2))
+
+📁 File: even_or_odd.py
+def is_even(n):
+    return n % 2 == 0
+
+print(is_even(4))  # True
+print(is_even(5))  # False
+
+📁 File: greeting.py
+def greet_user(name="User"):
+    print(f"Welcome, {name}!")
+
+greet_user()
+greet_user("Aye Aye")
+
+===========================================================================
+
+🐍 ရက် ၈ – Python Error Handling (try, except, finally)
+-------------------------------------------------------
+
+ဒီနေ့မှာ သင်ယူမယ့်အချက်တွေကတော့👇
+Error (Exceptions) ဆိုတာဘာလဲ?
+try, except အသုံးပြုပုံ
+finally block
+Multiple except
+raise keyword
+
+🔹 ၁။ Error ဆိုတာဘာလဲ?
+----------------------
+Python မှာ code ရေးနေတုန်း တချို့အချိန်မှာ error တွေဖြစ်တတ်ပါတယ်။
+ဥပမာ – number နဲ့ string ပေါင်းခြင်း၊ 0 နဲ့ portion ချက်ခြင်း။
+
+print(1 / 0)  # ZeroDivisionError
+
+🔹 ၂။ try, except Statement
+---------------------------
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+
+🔹 ၃။ Multiple except blocks
+---------------------------
+try:
+    num = int("abc")
+except ValueError:
+    print("That's not a number!")
+except ZeroDivisionError:
+    print("Can't divide by zero!")
+
+🔹 ၄။ finally block
+-------------------
+try:
+    f = open("file.txt", "r")
+except FileNotFoundError:
+    print("File not found!")
+finally:
+    print("Done checking the file.")
+🔹 finally block က error ဖြစ်ဖြစ် မဖြစ်ဖြစ် run မယ်။
+
+🔹 ၅။ raise keyword – ကိုယ့်တိုင် Error ပစ်ချင်တဲ့အခါ
+----------------------------------------------
+def check_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative")
+    return age
+
+check_age(-5)
+
+🧪 လေ့ကျင့်ရေး
+------------
+📁 File: safe_division.py
+def divide(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return "Error: Division by zero."
+
+print(divide(10, 2))
+print(divide(5, 0))
+
+📁 File: file_reader.py
+try:
+    f = open("data.txt", "r")
+    print(f.read())
+except FileNotFoundError:
+    print("File not found!")
+finally:
+    print("File check complete.")
+
+📁 File: age_checker.py
+def input_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative.")
+    return f"Your age is {age}."
+
+try:
+    print(input_age(-3))
+except ValueError as e:
+    print("Error:", e)
+
+=============================================================================
+
+🐍 ရက် ၉ – String Manipulation in Python(စာသားများကို ပြုပြင်လုပ်ဆောင်နည်းများ)
+-----------------------------------------------------------------------
+
+ဒီနေ့မှာ သင်လေ့လာမှာက👇
+String ကိုဖန်တီးခြင်း
+Indexing & Slicing
+Built-in string methods (upper(), lower(), strip(), split(), replace(), find() …)
+f-strings & Concatenation
+Useful tricks: reversing string, counting, checking substrings
+
+🔹 ၁။ String ဖန်တီးခြင်း
+--------------------
+name = "Python"
+greeting = 'Hello'
+multi_line = """This is 
+multi-line string."""
+
+🔹 ၂။ Indexing & Slicing
+------------------------
+text = "Hello World"
+print(text[0])     # H
+print(text[-1])    # d
+print(text[0:5])   # Hello
+print(text[6:])    # World
+➡️ text[start:end] ဆိုတာ start မှ စပြီး end မရောက်ခင်ထိဖြစ်တယ်။
+
+🔹 ၃။ Useful String Methods
+---------------------------
+s = "  Python Programming  "
+print(s.upper())        # PYTHON PROGRAMMING
+print(s.lower())        # python programming
+print(s.strip())        # remove leading/trailing spaces
+print(s.replace("Python", "Java"))  # Java Programming
+print(s.find("Pro"))    # index 7
+print(s.split())        # ['Python', 'Programming']
+
+🔹 ၄။ Concatenation & f-strings
+-------------------------------
+name = "Alice"
+age = 25
+
+# Concatenation
+print("Name: " + name + ", Age: " + str(age))
+
+# f-string (Python 3.6+)
+print(f"My name is {name} and I am {age} years old.")
+
+🔹 ၅။ Tricks
+------------
+✅ Reverse string
+text = "hello"
+print(text[::-1])  # olleh
+
+✅ Count substring
+s = "banana"
+print(s.count("a"))  # 3
+
+✅ Check substring
+print("Python" in "Python is great")     # True
+print("java" not in "Python is great")   # True
+
+🧪 လေ့ကျင့်ရေး
+------------
+📁 File: string_basics.py
+text = "   DevOps with Python  "
+print(text.upper())
+print(text.strip())
+print(text.replace("Python", "Linux"))
+
+📁 File: string_format.py
+name = "Aye Aye"
+job = "DevOps Engineer"
+print(f"{name} is a {job}.")
+
+===============================================================================
+
+🐍 ရက် ၁၀ – Modules နှင့် Packages မိတ်ဆက်
+---------------------------------------
+ဒီနေ့မှာ သင်လေ့လာမှာကတော့ Python မှာ Code များကို ပြန်လည်အသုံးပြုနိုင်အောင် စုစည်းထားတဲ့ Modules နဲ့ Packages အကြောင်းပဲ ဖြစ်ပါတယ်။
+
+🔹 ၁။ Module ဆိုတာဘာလဲ?
+----------------------
+Module တစ်ခုဆိုတာက .py ဖိုင်တစ်ဖိုင်ပါပဲ။ Python code တွေ၊ function, variable, class စသဖြင့် တစ်စုတစ်စည်းတည်းရှိပါတယ်။
+
+✅ ကိုယ့်ကိုယ်ပိုင် module ဖန်တီးခြင်း
+
+📁 my_module.py
+def say_hello(name):
+    return f"Hello, {name}!"
+
+📁 main.py
+import my_module
+
+print(my_module.say_hello("Aung Aung"))
+
+🔹 ၂။ Built-in Modules အသုံးပြုခြင်း
+--------------------------------
+import math
+import datetime
+
+print(math.sqrt(16))               # 4.0
+print(datetime.datetime.now())     # အခုအချိန်
+
+🔹 ၃။ from ... import ... နည်း
+-----------------------------
+from math import pi, sqrt
+
+print(pi)        # 3.14159...
+print(sqrt(49))  # 7.0
+
+🔹 ၄။ Package ဆိုတာဘာလဲ?
+------------------------
+Package ဆိုတာက Module များစွာကို အုပ်စုဖွဲ့ထားတာပါ။ အထဲမှာ __init__.py ဆိုတဲ့ဖိုင်လေးထည့်ထားရပါတယ်။
+
+✅ Directory Structure
+
+my_package/
+    __init__.py
+    greet.py
+    math_ops.py
+
+📁 greet.py
+def hi():
+    return "Hello from greet!"
+
+📁 main.py
+from my_package import greet
+print(greet.hi())
+
+🔹 ၅။ Useful Built-in Modules
+-----------------------------
+Module	        Description
+math	        သင်္ချာတွက်ချက်မှုများ
+random	        ကျပန်းနံပါတ်များ
+datetime	    ရက်စွဲနဲ့အချိန်
+os	            File system & OS commands
+sys	            Python interpreter info
+json	        JSON encode/decode
+
+🧪 လေ့ကျင့်ရေး
+------------
+📁 File: my_tools.py
+def add(x, y):
+    return x + y
+
+📁 test.py
+import my_tools
+print(my_tools.add(10, 20))  # 30
+
+=============================================================================
+
+🐍 ရက် ၁၁ – Working with Python Libraries (pip, common libraries)
+-----------------------------------------------------------------
+ဒီနေ့မှာ သင်လေ့လာရမယ့်အချက်တွေကတော့ Python မှာ libraries install လုပ်နည်း,
+pip command အသုံးပြုနည်းနဲ့ အသုံးများတဲ့ libraries များကို ဖြစ်ပါတယ်။
+
+📦 ၁။ Python Libraries ဆိုတာဘာလဲ?
+---------------------------------
+Library ဆိုတာက Python code (function, class, module) များစွာကို စုစည်းထားတာပါ။
+တစ်ခြား developer တွေက ရေးပြီးသားအရာတွေကို သုံးခြင်းဖြစ်ပြီး၊ ကိုယ်တိုင်ထပ်ရေးစရာမလိုတော့ပါ။
+
+🔧 ၂။ pip ဆိုတာဘာလဲ?
+--------------------
+pip ဆိုတာ Python package installer ဖြစ်ပြီး
+Python libraries များကို install / uninstall / update လုပ်ဖို့ အသုံးပြုပါတယ်။
+
+✅ Python 3.x မှာ pip သည် အလိုအလျောက် ပါလာတတ်သည်။
+
+💡 ၃။ pip commands အသုံးများ
+--------------------------
+Command	                                Description
+pip install library_name	            library တစ်ခု install
+pip uninstall library_name	            library တစ်ခုဖျက်
+pip list	                            install လုပ်ပြီးသား libraries ပြ
+pip show library_name	                library info ပြ
+pip freeze > requirements.txt	        current env library list ထုတ်
+pip install -r requirements.txt	        list မှ library များ install
+
+✅ ဥပမာ
+
+pip install requests
+pip show requests
+pip uninstall requests
+
+🌟 ၄။ အသုံးများသော Python Libraries
+--------------------------------
+Library	                    အသုံးဝင်မှု
+requests	                HTTP requests (API call)
+flask	                    Web framework
+numpy	                    Numeric computing
+pandas	                    Data analysis
+matplotlib	                Data visualization
+beautifulsoup4	            Web scraping
+django	                    Full-feature web development
+pytest	                    Unit testing
+boto3	                    AWS SDK for Python
+paramiko	                SSH connections
+
+🧪 လေ့ကျင့်ရေး
+------------
+✅ 1. requests library ကို install လုပ်ပါ:
+pip install requests
+
+✅ 2. Python code ရေးပါ:
+import requests
+response = requests.get("https://api.github.com")
+print("Status code:", response.status_code)
+print("Content:", response.text[:100])  # Only print first 100 characters
+
+===========================================================================
+
+ရက် ၁၂ – Object-Oriented Programming (OOP) basics
+-------------------------------------------------
+
+📘 မိတ်ဆက်: Python မှာ Object-Oriented Programming (OOP) ဆိုတာဟာ class နဲ့ object အခြေခံထားတဲ့ programming နည်းဖြစ်ပြီး၊
+data နဲ့ function တွေကို grouping လုပ်ဖို့ အသုံးပြုပါတယ်။
+
+✅ ၁။ OOP ရဲ့ အခြေခံအယူဝါဒ (Main Concepts)
+---------------------------------------
+Concept	                Explanation 
+Class	                Object တွေအတွက် blueprint (ပုံစံ)
+Object	                Class ကို အခြေခံပြီးဖန်တီးထားတဲ့ actual item
+Attribute	            Object ရဲ့ data တွေ (variable)
+Method	                Object ရဲ့ function တွေ (လုပ်ဆောင်ချက်)
+
+✅ ၂။ Class & Object များ
+------------------------
+🔸 Class တစ်ခုရေးခြင်း
+class Person:
+    def __init__(self, name, age):  # Constructor
+        self.name = name
+        self.age = age
+
+    def say_hello(self):
+        print(f"Hello, my name is {self.name} and I'm {self.age} years old.")
+
+🔸 Object တစ်ခုဖန်တီးခြင်း
+person1 = Person("Aung Aung", 25)
+person2 = Person("Mg Mg", 30)
+
+person1.say_hello()
+person2.say_hello()
+
+📌 Output
+Hello, my name is Aung Aung and I'm 25 years old.
+Hello, my name is Mg Mg and I'm 30 years old.
+
+✅ ၃။ __init__() method ဆိုတာဘာလဲ?
+----------------------------------
+Python မှာ class ကို ဖန်တီးတဲ့အခါ __init__() ဆိုတဲ့ special method ကို constructor လို့ခေါ်တယ်။
+Object တစ်ခုဖန်တီးတဲ့အခါ auto-run ဖြစ်တယ်။
+
+def __init__(self, name, age):
+
+✅ ၄။ self ဆိုတာဘာလဲ?
+---------------------
+self ဟာ current object ကို ပြသဖို့ အသုံးပြုတယ်။
+ဒီဟာကြောင့် Object တစ်ခုချင်းစီရဲ့ ကိုယ်ပိုင် attribute တွေ သတ်မှတ်နိုင်တယ်။
+
+🧪 လေ့ကျင့်ရေး
+----------------------------------
+📁 File: car_brand.py
+class Car:
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+    def info(self):
+        print(f"{self.brand} {self.model} ({self.year})")
+
+my_car = Car("Toyota", "Corolla", 2020)
+my_car.info()
+
+========================================================================
+
+👉 ရက် ၁၃ – Object-Oriented Programming (OOP) Concepts ဆက်လက်လေ့လာခြင်း
+------------------------------------------------------------------------
+ဒီနေ့မှာတော့ Python OOP ထဲက အရေးကြီးတဲ့ ၃ ခု – Encapsulation, Inheritance, နဲ့ Polymorphism ကို လေ့လာပါမယ်။
+
+✅ ၁။ Encapsulation (အချက်အလက်ကာကွယ်ခြင်း)
+-----------------------------------------
+Definition: Object ရဲ့ attribute တွေကို အပြင်ကနေ တိုက်ရိုက် access မဖြစ်စေဘဲ, method တွေကို သုံးပြီးသာ access ပြုနိုင်အောင် ကာကွယ်တာ။
+
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance   # private attribute
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+        else:
+            print("Not enough balance!")
+
+    def get_balance(self):
+        return self.__balance
+
+acc = BankAccount(1000)
+acc.deposit(500)
+acc.withdraw(300)
+print("💰 Balance:", acc.get_balance())
+
+
+✅ ၂။ Inheritance (အမွေဆက်ခံခြင်း)
+-------------------------------
+Definition: Class တစ်ခုဟာ အခြား class တစ်ခုရဲ့ feature (method, attribute) တွေကို ဆက်ခံအသုံးပြုတာ။
+
+class Animal:
+    def speak(self):
+        print("Animal makes sound")
+
+class Dog(Animal):  # Inheriting from Animal
+    def speak(self):
+        print("Dog barks 🐶")
+
+class Cat(Animal):
+    def speak(self):
+        print("Cat meows 🐱")
+
+dog = Dog()
+dog.speak()
+
+cat = Cat()
+cat.speak()
+
+✅ ၃။ Polymorphism (မျိုးစုံသဘောထား)
+---------------------------------
+Definition: Class တွေကတူညီတဲ့ method name ကို ချည်းပြီး ချွင်းချက်နဲ့လုပ်ဆောင်နိုင်ခြင်း။
+
+class Bird:
+    def fly(self):
+        print("Bird can fly 🐦")
+
+class Penguin(Bird):
+    def fly(self):
+        print("Penguin can't fly ❌")
+
+def test_fly(animal):
+    animal.fly()
+
+test_fly(Bird())
+test_fly(Penguin())
+
+===========================================================================
+
+🐍 ရက် ၁၄ – File I/O Operations in Python (Text Files Only)
+-----------------------------------------------------------
+ဒီနေ့မှာ သင်လေ့လာမှာက👇
+
+File ဖတ်နည်း (read)
+File ထဲရေးနည်း (write, append)
+File line by line ဖတ်နည်း
+with statement ကိုအသုံးပြုပြီး file ကို automatically close လုပ်ခြင်း
+File တွေ ရှိ/မရှိ စစ်ခြင်း
+
+🔹 ၁။ File ရေးခြင်း (Write)
+-------------------------
+# File ထဲကို data အသစ်ရေး => write mode ("w")
+with open("myfile.txt", "w") as file:
+    file.write("Hello from Python!\n")
+    file.write("This is line 2.\n")
+➡️ w mode က သတိထားရမယ်။ file ရှိနေပြီးသားဆိုရင် ဖျက်ပြီး ပြန်ရေးတယ်။
+
+🔹 ၂။ File ထဲ ထပ်ထည့်ခြင်း (Append)
+--------------------------------
+# File ထဲမှာ data မဖျက်ဘဲ နောက်ထပ်ထည့် => append mode ("a")
+with open("myfile.txt", "a") as file:
+    file.write("This is an added line.\n")
+
+🔹 ၃။ File ဖတ်ခြင်း (Read)
+-----------------------
+# Read mode ("r") နဲ့ file ထဲက အရာအားလုံးဖတ်
+with open("myfile.txt", "r") as file:
+    content = file.read()
+    print(content)
+
+🔹 ၄။ Line by Line ဖတ်
+----------------------
+with open("myfile.txt", "r") as file:
+    for line in file:
+        print(line.strip())
+➡️ strip() ကိုသုံးတာက newline ဖျက်တာ။
+
+🔹 ၅။ File ရှိ/မရှိ စစ်ရန်
+--------------------
+import os
+
+if os.path.exists("myfile.txt"):
+    print("File exists!")
+else:
+    print("File not found.")
+
+🧪 လေ့ကျင့်ရေး
+------------
+📁 File: file_write.py
+with open("notes.txt", "w") as f:
+    f.write("My first line in file.\n")
+    f.write("Second line of notes.\n")
+
+📁 File: file_read.py
+with open("notes.txt", "r") as f:
+    print(f.read())
+
+📁 File: file_append.py
+with open("notes.txt", "a") as f:
+    f.write("Appended third line.\n")
+
+📁 File: file_check.py
+import os
+filename = "notes.txt"
+if os.path.exists(filename):
+    print(f"{filename} exists.")
+else:
+    print(f"{filename} does not exist.")
+
+==========================================================================
+                           --- Thank you -----
