@@ -1,1 +1,1 @@
-This is the begineer python exercise.
+This is the begineer python exercises.
